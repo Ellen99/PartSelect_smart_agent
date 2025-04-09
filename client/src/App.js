@@ -26,7 +26,6 @@ function App() {
     <div className="App">
       <div className="heading">
       <img src={large_logo} alt="PartSelect Logo" className="logo" />
-      {/* <span className="header-text">Customer Service Chat</span> */}
       </div>
         <ChatWindow/>
     </div>

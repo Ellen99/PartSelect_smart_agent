@@ -29,11 +29,10 @@
 .assistant-message-container {
   align-items: flex-start;
   align-self: flex-start;
-  background-color: #f6f6f6;
-  border: 1px solid #337878; /* Add a border with the specified color */
+  background-color: #ffffff;
+  border-radius: 40px;
   border-top-left-radius: 0;
-  border-radius: 10px; /* Keep the rounded corners */
-  color: #000000;
+  color: #504c4c;
   padding: 14px;
   font-size: 13px;
   width: 100%;
@@ -57,19 +56,20 @@
   font-size: 13px;
   background-color: #89877c;
   color: #ffffff;
-  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
   text-align: left;
 }
 
 .assistant-message {
   align-self: flex-start;
-  background-color: #f6f6f6;
-  border-top-left-radius: 0;
-  color: #000000;
+  background-color: #f9f5f5;
+  color: #3e3b3b;
   padding: 14px;
   font-size: 13px;
   width: 100%;
   box-sizing: border-box;
+  border-radius: 10px;
+  border-bottom-left-radius: 0;
 }
 
 ::-webkit-scrollbar {
@@ -108,6 +108,13 @@
   border-radius: 5px;
   border: 1px solid #ccc;
   font-size: 13px;
+  outline: none;
+}
+
+.input-area input:focus {
+  border-color: #337878; /* Change border color when focused */
+  outline: 1px solid #337878; /* Add a custom outline */
+  box-shadow: 0 0 5px rgba(51, 120, 120, 0.5); /* Optional: Add a subtle shadow */
 }
 
 .input-area button {
@@ -120,17 +127,38 @@
   font-size: 13px;
 }
 
-.logo {
-  /* max-width: 20%; Default size for larger screens */
-  height: 55px;
+.predefined-buttons{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ccc;
+}
+.predefined-button {
+  padding: 8px 12px;
+  border: 1px solid #337878;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #337878;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s, color 0.3s;
+}
+.predefined-button:hover {
+  background-color: #337878;
+  color: #ffffff;
+}
 
+.logo {
+  height: 55px;
   display: block;
   margin: 10px 10px 10px 20px;
-  /* left: 10px; Adjust horizontal position */
-
 }
+
 /* For smaller screens (e.g., mobile devices) */
-@media (max-width: 768px) {
+@media (max-width: 350px) {
   .logo {
     content: url('../images/ps-small-logo.svg'); /* Use a smaller logo */
     max-width: 40%; /* Adjust size for smaller screens */
@@ -145,6 +173,11 @@
   margin-left: 10px; /* Add some left margin */
   flex: 1; /* Allow the text to take up remaining space */
 }
+.assistant-message-wrapper{
+  display: flex;
+  align-items: flex-end; /* Align items at the top */
+  margin-bottom: 10px; /* Add spacing between messages */
+}
 
 .message-logo {
   width: 50px;
@@ -153,11 +186,37 @@
   margin-right: 10px;
 }
 
+.dot {
+  font-size: 34px;
+  margin: 0 8px;
+  color: #337878;
+  animation: blink 3.5s infinite;
+}
 
-.message-content {
-  background-color: #ffffff;
-  padding: 10px 15px;
-  border-radius: 10px;
-  max-width: 70%;
-  font-size: 14px;
+.dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+@keyframes blink {
+  0%, 20%, 40%, 60%, 80%, 100% {
+    opacity: 0;
+  }
+  10%, 30%, 50%, 70%, 90% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes blink {
+  0%, 20%, 40%, 60%, 80%, 100% {
+    opacity: 0;
+  }
+  10%, 30%, 50%, 70%, 90% {
+    opacity: 1;
+  }
 }
