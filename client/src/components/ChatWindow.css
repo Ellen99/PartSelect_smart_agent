@@ -28,6 +28,16 @@
 
 .assistant-message-container {
   align-items: flex-start;
+  align-self: flex-start;
+  background-color: #f6f6f6;
+  border: 1px solid #337878; /* Add a border with the specified color */
+  border-top-left-radius: 0;
+  border-radius: 10px; /* Keep the rounded corners */
+  color: #000000;
+  padding: 14px;
+  font-size: 13px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .message {
@@ -45,7 +55,7 @@
 .user-message {
   align-self: flex-end;
   font-size: 13px;
-  background-color: #1b3875;
+  background-color: #89877c;
   color: #ffffff;
   border-top-right-radius: 0;
   text-align: left;
@@ -104,8 +114,50 @@
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #121212;
+  background-color: #337878;
   color: white;
   cursor: pointer;
   font-size: 13px;
+}
+
+.logo {
+  /* max-width: 20%; Default size for larger screens */
+  height: 55px;
+
+  display: block;
+  margin: 10px 10px 10px 20px;
+  /* left: 10px; Adjust horizontal position */
+
+}
+/* For smaller screens (e.g., mobile devices) */
+@media (max-width: 768px) {
+  .logo {
+    content: url('../images/ps-small-logo.svg'); /* Use a smaller logo */
+    max-width: 40%; /* Adjust size for smaller screens */
+  }
+}
+
+.header-text {
+  font-size: 16px; /* Larger font size for the header text */
+  font-weight: bold;
+  color: #1f1e1e; /* Dark gray text color */
+  text-align: left; /* Center the text */
+  margin-left: 10px; /* Add some left margin */
+  flex: 1; /* Allow the text to take up remaining space */
+}
+
+.message-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+
+.message-content {
+  background-color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 10px;
+  max-width: 70%;
+  font-size: 14px;
 }

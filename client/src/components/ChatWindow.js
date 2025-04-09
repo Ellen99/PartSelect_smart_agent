@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./ChatWindow.css";
-import { getAIMessage } from "../api/api";
+import { getAgentResponse } from "../api/api";
 import { marked } from "marked";
+import agentLogo from "../images/agent_img.png";
 
 function ChatWindow() {
 
@@ -23,22 +24,30 @@ function ChatWindow() {
       scrollToBottom();
   }, [messages]);
 
-  const handleSend = async (input) => {
+  const handleSend = async () => {
     if (input.trim() !== "") {
       // Set user message
       setMessages(prevMessages => [...prevMessages, { role: "user", content: input }]);
       setInput("");
-
+  
       // Call API & set assistant message
-      const newMessage = await getAIMessage(input);
+      const newMessage = await getAgentResponse(input, messages);
       setMessages(prevMessages => [...prevMessages, newMessage]);
     }
   };
-
+  
   return (
       <div className="messages-container">
           {messages.map((message, index) => (
               <div key={index} className={`${message.role}-message-container`}>
+                {/* Only show the agent logo for assistant messages */}
+                {message.role === "assistant" && (
+                  <img
+                    src={agentLogo}
+                    alt="Agent Logo"
+                    className="message-logo"
+                  />
+                )}
                   {message.content && (
                       <div className={`message ${message.role}-message`}>
                           <div dangerouslySetInnerHTML={{__html: marked(message.content).replace(/<p>|<\/p>/g, "")}}></div>

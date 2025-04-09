@@ -1,0 +1,4 @@
+client/node_modules
+smart_chatenv
+server/smart_agent_env
+*.pyc

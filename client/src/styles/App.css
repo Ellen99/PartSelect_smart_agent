@@ -6,7 +6,7 @@
 }
 
 .App {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
 }
 
 .heading {
@@ -15,11 +15,11 @@
   left: 0;
   width: 100%;
   background: rgba(255, 255, 255); 
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 4px rgba(51, 120, 120, 255);
   display: flex;
-  font-weight: 700;
-  font-size: 16px;
-  justify-content: center;
+  font-weight: 400;
+  font-size: 30px;
+  justify-content: left;
   align-items: center;
   height: 60px;
 }
