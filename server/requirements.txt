@@ -6,3 +6,6 @@ Flask-Cors
 
 # HTTP requests library
 requests
+chromadb
+beautifulsoup4
+langchain

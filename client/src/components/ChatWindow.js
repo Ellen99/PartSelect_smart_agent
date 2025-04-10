@@ -8,14 +8,16 @@ function ChatWindow() {
 
   const defaultMessage = [{
     role: "assistant",
-    content: "Hi, how can I help you today?"
+    content: "Hello, I am PartSelect agent. How can I help you today? <br> <br> <strong>Note:</strong> You can ask me about refrigerator and dishwasher parts. If you need help finding a part, just let me know the appliance type and model number. I am here to assist you!"
   }];
 
   const predefinedMessages = [
-    "What are your hours of operation?",
-    "How can I track my order?",
-    "Can you help me find a part?",
-    "What is your return policy?",
+    "What refrigerator parts does PartSelect offer?",
+    "What dishwasher parts does PartSelect offer?",
+    // "How can I track my order?",
+    // "Find My part",
+    // "Can you help me find a part?",
+    // "What is your return policy?",
   ];
 
   const [messages,setMessages] = useState(defaultMessage)
@@ -188,7 +190,7 @@ function ChatWindow() {
               placeholder="Type a message..."
               onKeyPress={(e) => {
                 if (e.key === "Enter" && !e.shiftKey && !isInputEmpty && !isLoading) {
-                  handleSend(input);
+                  handleSend();
                   e.preventDefault();
                 }
               }}
